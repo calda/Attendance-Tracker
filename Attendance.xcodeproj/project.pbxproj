@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E5AA4341D8B33530017B9F1 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5AA4331D8B33530017B9F1 /* Member.swift */; };
+		2E5AA4361D8B38850017B9F1 /* People.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2E5AA4351D8B38850017B9F1 /* People.csv */; };
+		2E5AA4381D8B3AB20017B9F1 /* People.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2E5AA4371D8B3AB20017B9F1 /* People.csv */; };
+		2E63E5671D8B47A8001FB961 /* Ben Felder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E55E1D8B47A8001FB961 /* Ben Felder.jpg */; };
+		2E63E5681D8B47A8001FB961 /* Cal Stephens.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E55F1D8B47A8001FB961 /* Cal Stephens.jpg */; };
+		2E63E5691D8B47A8001FB961 /* Chris Josey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E5601D8B47A8001FB961 /* Chris Josey.jpg */; };
+		2E63E56A1D8B47A8001FB961 /* Giancarlo Vargas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E5611D8B47A8001FB961 /* Giancarlo Vargas.jpg */; };
+		2E63E56B1D8B47A8001FB961 /* Jake Waldner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E5621D8B47A8001FB961 /* Jake Waldner.jpg */; };
+		2E63E56C1D8B47A8001FB961 /* Koushik Krishnan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E5631D8B47A8001FB961 /* Koushik Krishnan.jpg */; };
+		2E63E56D1D8B47A8001FB961 /* Max Trussell.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E5641D8B47A8001FB961 /* Max Trussell.jpg */; };
+		2E63E56E1D8B47A8001FB961 /* Nick Pinto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E5651D8B47A8001FB961 /* Nick Pinto.jpg */; };
+		2E63E56F1D8B47A8001FB961 /* Sam Brown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E5661D8B47A8001FB961 /* Sam Brown.jpg */; };
 		2ED16C931D8B154D00B9424D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED16C921D8B154D00B9424D /* AppDelegate.swift */; };
 		2ED16C951D8B154D00B9424D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED16C941D8B154D00B9424D /* ViewController.swift */; };
 		2ED16C971D8B154D00B9424D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED16C961D8B154D00B9424D /* Assets.xcassets */; };
@@ -14,6 +26,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E5AA4331D8B33530017B9F1 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Member.swift; path = Model/Member.swift; sourceTree = "<group>"; };
+		2E5AA4351D8B38850017B9F1 /* People.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = People.csv; path = Model/People.csv; sourceTree = "<group>"; };
+		2E5AA4371D8B3AB20017B9F1 /* People.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = People.csv; path = Model/People.csv; sourceTree = "<group>"; };
+		2E63E55E1D8B47A8001FB961 /* Ben Felder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ben Felder.jpg"; sourceTree = "<group>"; };
+		2E63E55F1D8B47A8001FB961 /* Cal Stephens.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Cal Stephens.jpg"; sourceTree = "<group>"; };
+		2E63E5601D8B47A8001FB961 /* Chris Josey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Chris Josey.jpg"; sourceTree = "<group>"; };
+		2E63E5611D8B47A8001FB961 /* Giancarlo Vargas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Giancarlo Vargas.jpg"; sourceTree = "<group>"; };
+		2E63E5621D8B47A8001FB961 /* Jake Waldner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jake Waldner.jpg"; sourceTree = "<group>"; };
+		2E63E5631D8B47A8001FB961 /* Koushik Krishnan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Koushik Krishnan.jpg"; sourceTree = "<group>"; };
+		2E63E5641D8B47A8001FB961 /* Max Trussell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Max Trussell.jpg"; sourceTree = "<group>"; };
+		2E63E5651D8B47A8001FB961 /* Nick Pinto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Nick Pinto.jpg"; sourceTree = "<group>"; };
+		2E63E5661D8B47A8001FB961 /* Sam Brown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sam Brown.jpg"; sourceTree = "<group>"; };
 		2ED16C8F1D8B154D00B9424D /* Attendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED16C921D8B154D00B9424D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ED16C941D8B154D00B9424D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +57,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E5AA4321D8B33380017B9F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E5AA4331D8B33530017B9F1 /* Member.swift */,
+				2E5AA4371D8B3AB20017B9F1 /* People.csv */,
+				2E63E55D1D8B47A8001FB961 /* Images */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2E63E55D1D8B47A8001FB961 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2E63E55E1D8B47A8001FB961 /* Ben Felder.jpg */,
+				2E63E55F1D8B47A8001FB961 /* Cal Stephens.jpg */,
+				2E63E5601D8B47A8001FB961 /* Chris Josey.jpg */,
+				2E63E5611D8B47A8001FB961 /* Giancarlo Vargas.jpg */,
+				2E63E5621D8B47A8001FB961 /* Jake Waldner.jpg */,
+				2E63E5631D8B47A8001FB961 /* Koushik Krishnan.jpg */,
+				2E63E5641D8B47A8001FB961 /* Max Trussell.jpg */,
+				2E63E5651D8B47A8001FB961 /* Nick Pinto.jpg */,
+				2E63E5661D8B47A8001FB961 /* Sam Brown.jpg */,
+			);
+			name = Images;
+			path = Model/Images;
+			sourceTree = "<group>";
+		};
 		2ED16C861D8B154D00B9424D = {
 			isa = PBXGroup;
 			children = (
@@ -52,11 +103,13 @@
 		2ED16C911D8B154D00B9424D /* Attendance */ = {
 			isa = PBXGroup;
 			children = (
+				2E5AA4321D8B33380017B9F1 /* Model */,
 				2ED16C921D8B154D00B9424D /* AppDelegate.swift */,
 				2ED16C941D8B154D00B9424D /* ViewController.swift */,
 				2ED16C961D8B154D00B9424D /* Assets.xcassets */,
 				2ED16C981D8B154D00B9424D /* Main.storyboard */,
 				2ED16C9B1D8B154D00B9424D /* Info.plist */,
+				2E5AA4351D8B38850017B9F1 /* People.csv */,
 			);
 			path = Attendance;
 			sourceTree = "<group>";
@@ -121,8 +174,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E63E5691D8B47A8001FB961 /* Chris Josey.jpg in Resources */,
+				2E63E56B1D8B47A8001FB961 /* Jake Waldner.jpg in Resources */,
+				2E5AA4361D8B38850017B9F1 /* People.csv in Resources */,
 				2ED16C971D8B154D00B9424D /* Assets.xcassets in Resources */,
+				2E63E56E1D8B47A8001FB961 /* Nick Pinto.jpg in Resources */,
+				2E63E56F1D8B47A8001FB961 /* Sam Brown.jpg in Resources */,
+				2E5AA4381D8B3AB20017B9F1 /* People.csv in Resources */,
+				2E63E5681D8B47A8001FB961 /* Cal Stephens.jpg in Resources */,
+				2E63E5671D8B47A8001FB961 /* Ben Felder.jpg in Resources */,
 				2ED16C9A1D8B154D00B9424D /* Main.storyboard in Resources */,
+				2E63E56D1D8B47A8001FB961 /* Max Trussell.jpg in Resources */,
+				2E63E56A1D8B47A8001FB961 /* Giancarlo Vargas.jpg in Resources */,
+				2E63E56C1D8B47A8001FB961 /* Koushik Krishnan.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED16C951D8B154D00B9424D /* ViewController.swift in Sources */,
+				2E5AA4341D8B33530017B9F1 /* Member.swift in Sources */,
 				2ED16C931D8B154D00B9424D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,7 +257,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -235,7 +300,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -250,6 +315,7 @@
 				DEVELOPMENT_TEAM = FZ89A5SZ7C;
 				INFOPLIST_FILE = Attendance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = tech.calstephens.Attendance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -264,6 +330,7 @@
 				DEVELOPMENT_TEAM = FZ89A5SZ7C;
 				INFOPLIST_FILE = Attendance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = tech.calstephens.Attendance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -289,6 +356,7 @@
 				2ED16CA01D8B154D00B9424D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
