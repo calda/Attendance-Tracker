@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var image: NSImageView!
     @IBOutlet weak var firstName: NSTextField!
     @IBOutlet weak var lastName: NSTextField!
+    @IBOutlet weak var rollbookNumber: NSTextField!
 
     var currentMember: Member!
     
@@ -22,74 +23,100 @@ class ViewController: NSViewController {
     
     override func viewDidLayout() {
         self.view.window?.titlebarAppearsTransparent = true
-        self.view.window?.titleVisibility = .hidden
+        self.view.window?.title = "GFM 9/21"
         self.view.window?.isMovableByWindowBackground = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set up card
-        self.view.wantsLayer = true
-        self.view.superview?.wantsLayer = true
-        self.card.wantsLayer = true
-        
-        self.card.shadow = NSShadow()
-        
-        self.card.layer?.backgroundColor = NSColor.white.cgColor
-        self.card.layer?.cornerRadius = 10.0
-        
-        self.card.layer?.shadowOpacity = 0.2
-        self.card.layer?.shadowColor = NSColor.black.cgColor
-        self.card.layer?.shadowOffset = NSMakeSize(0, 15)
-        
-        let shadowRect = CGRect(x: 0, y: -10, width: self.card.bounds.width, height: self.card.bounds.height - 10)
-        self.card.layer?.shadowPath = CGPath(roundedRect: shadowRect, cornerWidth: 10, cornerHeight: 10, transform: nil)
-        self.card.layer?.shadowRadius = 10
+        self.setUpForNextMember()
         
         //populate views
         self.image.wantsLayer = true
         self.image.layer?.cornerRadius = 5.0
-        
     }
     
     
     //MARK: - Controller
     
     func setUpForNextMember() {
-        guard let currentIndex = Member.all.index(of: currentMember) else {
-            setUp(forMember: Member.all.first!)
+        
+        guard let currentMember = currentMember, let currentIndex = Member.all.index(of: currentMember) else {
+            setUp(for: Member.all.first!)
+            return
         }
         
-
+        let nextIndex = currentIndex.advanced(by: 1)
+        if abs(nextIndex.distance(to: Member.all.startIndex)) >= Member.all.count {
+            finish()
+            return
+        }
+        
+        let nextMember = Member.all[nextIndex]
+        self.setUp(for: nextMember)
     }
     
-    func setUp(forMember member: Member) {
+    func setUp(for member: Member) {
         self.currentMember = member
+        self.image.image = member.image
         
-        let image
+        self.firstName.stringValue = member.firstName
+        self.lastName.stringValue = member.lastName
+        self.rollbookNumber.stringValue = member.rollbookString
+        
+        func updateLabelWeight(of label: NSTextField, to weight: CGFloat) {
+            let size = label.font!.pointSize
+            let font = NSFont.systemFont(ofSize: size, weight: weight)
+            label.font = font
+        }
+        
+        let firstNameWeight = (member.isPledge ? NSFontWeightMedium : NSFontWeightLight)
+        updateLabelWeight(of: self.firstName, to: firstNameWeight)
+        
+        let lastNameWeight = (member.isPledge ? NSFontWeightLight : NSFontWeightMedium)
+        updateLabelWeight(of: self.lastName, to: lastNameWeight)
+    }
+    
+    func playTransition(for view: NSView) {
+        let transition = CATransition()
+        transition.duration = 0.15
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        transition.type = kCATransitionMoveIn
+        transition.subtype = kCATransitionFromRight
+        
+        self.card.layer?.add(transition, forKey: nil)
+    }
+    
+    func finish() {
+        self.card.alphaValue = 0.0
+        playTransition(for: self.card)
     }
     
     
     //MARK: - User Interaction
     
+    override func keyUp(with event: NSEvent) {
+        print(event.keyCode)
+        print(event.characters)
+    }
+    
     @IBAction func absentPressed(_ sender: NSButton) {
+        processSelection(attendance: .absent)
     }
     
     @IBAction func excusedPressed(_ sender: NSButton) {
+        processSelection(attendance: .excused)
     }
     
     @IBAction func presentPressed(_ sender: NSButton) {
+        processSelection(attendance: .present)
     }
     
     func processSelection(attendance: Attendance) {
-        setUp(forMember: <#T##Member#>)
+        setUpForNextMember()
+        playTransition(for: self.card)
     }
-
-    
-    
-    
-
 
 }
 

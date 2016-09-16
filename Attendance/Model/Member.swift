@@ -9,7 +9,7 @@
 import AppKit
 
 enum Attendance {
-    case Present, Excused, Absent
+    case present, excused, absent
 }
 
 func ==(left: Member, right: Member) -> Bool {
@@ -67,6 +67,10 @@ class Member : CustomStringConvertible, Equatable {
     
     //MARK: - Dyanamic Properties
     
+    var isPledge: Bool {
+        return rollbook == nil
+    }
+    
     var rollbookString: String {
         guard let rollbook = rollbook else { return "Pledge" }
         return "#\(rollbook)"
@@ -74,6 +78,11 @@ class Member : CustomStringConvertible, Equatable {
     
     var description: String {
         return "\(firstName) \(lastName) (\(rollbookString))"
+    }
+    
+    var image: NSImage? {
+        let fileName = "\(firstName) \(lastName)"
+        return NSImage(named: "\(fileName).jpg") ?? NSImage(named: "\(fileName).png")
     }
     
 }
