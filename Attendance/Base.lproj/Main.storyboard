@@ -93,7 +93,7 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="561" y="228" width="550" height="600"/>
+                        <rect key="contentRect" x="561" y="275" width="550" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="550" height="600"/>
                         <value key="maxSize" type="size" width="550" height="600"/>
@@ -114,7 +114,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="545" height="688"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <view wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OV8-ew-FdD" userLabel="Center View">
+                            <view wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OV8-ew-FdD" userLabel="Input View">
                                 <rect key="frame" x="-18" y="54" width="581" height="580"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ecg-JE-27x" userLabel="Person Card" customClass="ShadowView" customModule="Attendance" customModuleProvider="target">
@@ -289,8 +289,138 @@
                                     <constraint firstItem="9Bt-Yt-CHZ" firstAttribute="top" secondItem="ecg-JE-27x" secondAttribute="bottom" constant="50" id="sHQ-zL-sT6"/>
                                 </constraints>
                             </view>
+                            <customView alphaValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="jzq-mw-cE2" userLabel="Statistics">
+                                <rect key="frame" x="160" y="177" width="225" height="335"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Fa6-Uo-Af3" userLabel="Percent Present">
+                                        <rect key="frame" x="0.0" y="250" width="225" height="85"/>
+                                        <subviews>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="9r3-WC-P0P">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="85" id="3vO-2h-Bnr"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="6W5-T1-76e"/>
+                                                    <constraint firstAttribute="height" constant="85" id="qcX-Qh-UV5"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="present" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ChV-jB-BYO">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="presentPressed:" target="XfG-lQ-9wD" id="npa-5t-rfh"/>
+                                                </connections>
+                                            </button>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xgl-J7-Uhh">
+                                                <rect key="frame" x="103" y="0.0" width="124" height="85"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="91%" id="E3y-Gr-heb">
+                                                    <font key="font" metaFont="systemMedium" size="65"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="9r3-WC-P0P" secondAttribute="bottom" id="4Dg-px-ECy"/>
+                                            <constraint firstItem="9r3-WC-P0P" firstAttribute="top" secondItem="Fa6-Uo-Af3" secondAttribute="top" id="7NM-jl-9RD"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xgl-J7-Uhh" secondAttribute="bottom" id="Feq-sh-kBI"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xgl-J7-Uhh" secondAttribute="trailing" id="LSF-Cw-cLY"/>
+                                            <constraint firstItem="9r3-WC-P0P" firstAttribute="leading" secondItem="Fa6-Uo-Af3" secondAttribute="leading" id="jsg-Jz-yfZ"/>
+                                            <constraint firstItem="Xgl-J7-Uhh" firstAttribute="top" secondItem="Fa6-Uo-Af3" secondAttribute="top" id="oFg-Vi-7ID"/>
+                                            <constraint firstItem="Xgl-J7-Uhh" firstAttribute="leading" secondItem="9r3-WC-P0P" secondAttribute="trailing" constant="20" id="rSl-rb-hCb"/>
+                                        </constraints>
+                                    </customView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="FdF-kz-ADa" userLabel="Percent Excused">
+                                        <rect key="frame" x="0.0" y="125" width="225" height="85"/>
+                                        <subviews>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="HWB-7D-6F2">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="85" id="JQC-9g-9O9"/>
+                                                    <constraint firstAttribute="height" constant="85" id="VT7-6K-ois"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="eIy-3F-T4h"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="excused" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="pxW-1e-JkH">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="presentPressed:" target="XfG-lQ-9wD" id="yzh-GA-e8e"/>
+                                                </connections>
+                                            </button>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z3p-Dt-MEl">
+                                                <rect key="frame" x="103" y="0.0" width="124" height="85"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="3%" id="3qc-Tk-0q7">
+                                                    <font key="font" metaFont="systemLight" size="65"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="HWB-7D-6F2" secondAttribute="bottom" id="1b2-5M-4qX"/>
+                                            <constraint firstItem="HWB-7D-6F2" firstAttribute="top" secondItem="FdF-kz-ADa" secondAttribute="top" id="4KP-w1-o7a"/>
+                                            <constraint firstAttribute="bottom" secondItem="Z3p-Dt-MEl" secondAttribute="bottom" id="4dN-xQ-Hv7"/>
+                                            <constraint firstAttribute="trailing" secondItem="Z3p-Dt-MEl" secondAttribute="trailing" id="JM5-DC-g9N"/>
+                                            <constraint firstItem="Z3p-Dt-MEl" firstAttribute="leading" secondItem="HWB-7D-6F2" secondAttribute="trailing" constant="20" id="Y3h-Nh-b2A"/>
+                                            <constraint firstItem="HWB-7D-6F2" firstAttribute="leading" secondItem="FdF-kz-ADa" secondAttribute="leading" id="aCK-7x-Aj7"/>
+                                            <constraint firstItem="Z3p-Dt-MEl" firstAttribute="top" secondItem="FdF-kz-ADa" secondAttribute="top" id="fRk-y9-DVx"/>
+                                        </constraints>
+                                    </customView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="WQM-Mf-mXY" userLabel="Percent Absent">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="85"/>
+                                        <subviews>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="3Hd-yF-fSH">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="0zI-gR-xjl"/>
+                                                    <constraint firstAttribute="height" constant="85" id="Azj-Sx-fF1"/>
+                                                    <constraint firstAttribute="width" constant="85" id="KPL-v8-0Sj"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="absent" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="brk-Hn-chc">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="presentPressed:" target="XfG-lQ-9wD" id="tTW-sd-aZh"/>
+                                                </connections>
+                                            </button>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iQa-R8-ooa">
+                                                <rect key="frame" x="103" y="0.0" width="124" height="85"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="6%" id="M9u-Cb-9v6">
+                                                    <font key="font" metaFont="systemLight" size="65"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="iQa-R8-ooa" secondAttribute="trailing" id="9xc-fW-uJV"/>
+                                            <constraint firstItem="iQa-R8-ooa" firstAttribute="leading" secondItem="3Hd-yF-fSH" secondAttribute="trailing" constant="20" id="GD9-r9-xyu"/>
+                                            <constraint firstItem="3Hd-yF-fSH" firstAttribute="top" secondItem="WQM-Mf-mXY" secondAttribute="top" id="Jog-Et-QT6"/>
+                                            <constraint firstItem="3Hd-yF-fSH" firstAttribute="leading" secondItem="WQM-Mf-mXY" secondAttribute="leading" id="RoB-l9-JgG"/>
+                                            <constraint firstAttribute="bottom" secondItem="iQa-R8-ooa" secondAttribute="bottom" id="Wl2-yR-rAA"/>
+                                            <constraint firstItem="iQa-R8-ooa" firstAttribute="top" secondItem="WQM-Mf-mXY" secondAttribute="top" id="k4z-fu-0eW"/>
+                                            <constraint firstAttribute="bottom" secondItem="3Hd-yF-fSH" secondAttribute="bottom" id="vKM-6G-52c"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FdF-kz-ADa" secondAttribute="trailing" id="087-to-HR1"/>
+                                    <constraint firstItem="Fa6-Uo-Af3" firstAttribute="leading" secondItem="jzq-mw-cE2" secondAttribute="leading" id="3wb-ww-e4S"/>
+                                    <constraint firstAttribute="trailing" secondItem="WQM-Mf-mXY" secondAttribute="trailing" id="Hbm-ju-L5M"/>
+                                    <constraint firstItem="WQM-Mf-mXY" firstAttribute="top" secondItem="FdF-kz-ADa" secondAttribute="bottom" constant="40" id="NBj-eh-EzW"/>
+                                    <constraint firstItem="FdF-kz-ADa" firstAttribute="top" secondItem="Fa6-Uo-Af3" secondAttribute="bottom" constant="40" id="Psv-nd-IHY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fa6-Uo-Af3" secondAttribute="trailing" id="U66-3w-vSy"/>
+                                    <constraint firstItem="FdF-kz-ADa" firstAttribute="leading" secondItem="jzq-mw-cE2" secondAttribute="leading" id="WSY-Qc-xnM"/>
+                                    <constraint firstAttribute="bottom" secondItem="WQM-Mf-mXY" secondAttribute="bottom" id="lHb-y5-WpE"/>
+                                    <constraint firstItem="Fa6-Uo-Af3" firstAttribute="top" secondItem="jzq-mw-cE2" secondAttribute="top" id="mQz-sK-erw"/>
+                                    <constraint firstItem="WQM-Mf-mXY" firstAttribute="leading" secondItem="jzq-mw-cE2" secondAttribute="leading" id="yPB-O3-n1C"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="jzq-mw-cE2" firstAttribute="centerY" secondItem="apr-Bp-b5g" secondAttribute="centerY" id="4dc-PT-Pwl"/>
+                            <constraint firstItem="jzq-mw-cE2" firstAttribute="centerX" secondItem="apr-Bp-b5g" secondAttribute="centerX" id="4vP-xb-Ikb"/>
                             <constraint firstItem="OV8-ew-FdD" firstAttribute="centerY" secondItem="apr-Bp-b5g" secondAttribute="centerY" id="9RG-aZ-5vD"/>
                             <constraint firstItem="OV8-ew-FdD" firstAttribute="centerX" secondItem="apr-Bp-b5g" secondAttribute="centerX" id="uS0-LB-XQh"/>
                         </constraints>
@@ -299,8 +429,13 @@
                         <outlet property="card" destination="ecg-JE-27x" id="AC2-7a-SJL"/>
                         <outlet property="firstName" destination="WTH-6z-O30" id="aFN-BU-vvh"/>
                         <outlet property="image" destination="ScN-i0-D1N" id="tn6-HE-o4F"/>
+                        <outlet property="inputView" destination="OV8-ew-FdD" id="JRG-4r-mYE"/>
                         <outlet property="lastName" destination="egc-u4-b97" id="P13-9l-xoP"/>
+                        <outlet property="percentAbsent" destination="iQa-R8-ooa" id="cJk-fk-KiY"/>
+                        <outlet property="percentExcused" destination="Z3p-Dt-MEl" id="nwf-jh-pgJ"/>
+                        <outlet property="percentPresent" destination="Xgl-J7-Uhh" id="reI-jq-Q2r"/>
                         <outlet property="rollbookNumber" destination="EhE-w3-7rZ" id="uXW-Yf-N11"/>
+                        <outlet property="statisticsView" destination="jzq-mw-cE2" id="jBb-Y2-qrH"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

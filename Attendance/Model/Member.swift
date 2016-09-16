@@ -20,7 +20,7 @@ class Member : CustomStringConvertible, Equatable {
     
     //MARK: - Load from disk
     
-    static var all: [Member] {
+    static var all: [Member]  = {
         guard let path = Bundle.main.path(forResource: "People", ofType: "csv") else { return [] }
         let url = URL(fileURLWithPath: path)
         guard let contents = try? NSString(contentsOf: url, encoding: String.Encoding.utf8.rawValue) else { return [] }
@@ -43,7 +43,7 @@ class Member : CustomStringConvertible, Equatable {
         }
         
         return people
-    }
+    }()
     
     
     //MARK: - Properties

@@ -10,11 +10,17 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var inputView: NSView!
     @IBOutlet weak var card: NSView!
     @IBOutlet weak var image: NSImageView!
     @IBOutlet weak var firstName: NSTextField!
     @IBOutlet weak var lastName: NSTextField!
     @IBOutlet weak var rollbookNumber: NSTextField!
+    
+    @IBOutlet weak var statisticsView: NSView!
+    @IBOutlet weak var percentPresent: NSTextField!
+    @IBOutlet weak var percentExcused: NSTextField!
+    @IBOutlet weak var percentAbsent: NSTextField!
 
     var currentMember: Member!
     
@@ -91,6 +97,43 @@ class ViewController: NSViewController {
     func finish() {
         self.card.alphaValue = 0.0
         playTransition(for: self.card)
+        
+        let attendanceToday = Member.all.map{ $0.attendanceToday ?? .absent }
+        var stats: [Attendance : Int] = [:]
+        
+        attendanceToday.forEach {
+            stats[$0] = (stats[$0] ?? 0) + 1
+        }
+        
+        func countToPercentLabel(_ count: Int?, _ label: NSTextField) {
+            let total = Member.all.count
+            
+            if total == 0 {
+                label.stringValue = "0%"
+                return
+            }
+            
+            let fraction = Double(count ?? 0) / Double(total)
+            let percent = Int(round(fraction * 100))
+            label.stringValue = "\(percent)%"
+        }
+        
+        countToPercentLabel(stats[.present], self.percentPresent)
+        countToPercentLabel(stats[.excused], self.percentExcused)
+        countToPercentLabel(stats[.absent], self.percentAbsent)
+        
+        
+        NSAnimationContext.runAnimationGroup({ context in
+            context.duration = 0.15
+            context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            self.inputView.animator().alphaValue = 0.0
+        }, completionHandler: {
+            NSAnimationContext.runAnimationGroup({ context in
+                context.duration = 0.5
+                context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                self.statisticsView.animator().alphaValue = 1.0
+            }, completionHandler: nil)
+        })
     }
     
     
@@ -114,6 +157,8 @@ class ViewController: NSViewController {
     }
     
     func processSelection(attendance: Attendance) {
+        self.currentMember.attendanceToday = attendance
+        
         setUpForNextMember()
         playTransition(for: self.card)
     }

@@ -76,7 +76,6 @@
 		2E062A631D8B776C00D3BEDB /* Zach Swint.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E062A1F1D8B776C00D3BEDB /* Zach Swint.jpg */; };
 		2E062A641D8B776C00D3BEDB /* Zachary Broderick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E062A201D8B776C00D3BEDB /* Zachary Broderick.jpg */; };
 		2E5AA4341D8B33530017B9F1 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5AA4331D8B33530017B9F1 /* Member.swift */; };
-		2E5AA4361D8B38850017B9F1 /* People.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2E5AA4351D8B38850017B9F1 /* People.csv */; };
 		2E5AA4381D8B3AB20017B9F1 /* People.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2E5AA4371D8B3AB20017B9F1 /* People.csv */; };
 		2E63E5711D8B6513001FB961 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E63E5701D8B6513001FB961 /* ShadowView.swift */; };
 		2ED16C931D8B154D00B9424D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED16C921D8B154D00B9424D /* AppDelegate.swift */; };
@@ -155,7 +154,6 @@
 		2E062A1F1D8B776C00D3BEDB /* Zach Swint.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Zach Swint.jpg"; sourceTree = "<group>"; };
 		2E062A201D8B776C00D3BEDB /* Zachary Broderick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Zachary Broderick.jpg"; sourceTree = "<group>"; };
 		2E5AA4331D8B33530017B9F1 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Member.swift; path = Model/Member.swift; sourceTree = "<group>"; };
-		2E5AA4351D8B38850017B9F1 /* People.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = People.csv; path = Model/People.csv; sourceTree = "<group>"; };
 		2E5AA4371D8B3AB20017B9F1 /* People.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = People.csv; path = Model/People.csv; sourceTree = "<group>"; };
 		2E63E5701D8B6513001FB961 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		2ED16C8F1D8B154D00B9424D /* Attendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,7 +287,6 @@
 				2ED16C961D8B154D00B9424D /* Assets.xcassets */,
 				2ED16C981D8B154D00B9424D /* Main.storyboard */,
 				2ED16C9B1D8B154D00B9424D /* Info.plist */,
-				2E5AA4351D8B38850017B9F1 /* People.csv */,
 			);
 			path = Attendance;
 			sourceTree = "<group>";
@@ -389,7 +386,6 @@
 				2E062A4C1D8B776C00D3BEDB /* Matt Ashcraft.jpg in Resources */,
 				2E062A221D8B776C00D3BEDB /* Addison Ku.jpg in Resources */,
 				2E062A381D8B776C00D3BEDB /* Drew Polstra.jpg in Resources */,
-				2E5AA4361D8B38850017B9F1 /* People.csv in Resources */,
 				2E062A4D1D8B776C00D3BEDB /* Matt Myers.jpg in Resources */,
 				2E062A621D8B776C00D3BEDB /* Zach Jacob.jpg in Resources */,
 				2E062A631D8B776C00D3BEDB /* Zach Swint.jpg in Resources */,
