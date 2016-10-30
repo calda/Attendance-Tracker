@@ -8,7 +8,8 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+@available(OSX 10.12.1, *)
+class ViewController: NSViewController, NSTouchBarDelegate {
 
     @IBOutlet weak var inputView: NSView!
     @IBOutlet weak var card: NSView!
@@ -22,6 +23,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var percentExcused: NSTextField!
     @IBOutlet weak var percentAbsent: NSTextField!
 
+    @IBOutlet weak var absentButton: NSButton!
+    @IBOutlet weak var excusedButton: NSButton!
+    @IBOutlet weak var presentButton: NSButton!
+    
     var currentMember: Member!
     
     
@@ -36,11 +41,17 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSApplication.shared().isAutomaticCustomizeTouchBarMenuItemEnabled = true
+        
         self.setUpForNextMember()
         
         //populate views
         self.image.wantsLayer = true
         self.image.layer?.cornerRadius = 5.0
+    }
+    
+    override func viewDidAppear() {
+        print(self.view.window!.makeFirstResponder(self.view))
     }
     
     
@@ -139,11 +150,6 @@ class ViewController: NSViewController {
     
     //MARK: - User Interaction
     
-    override func keyUp(with event: NSEvent) {
-        print(event.keyCode)
-        print(event.characters)
-    }
-    
     @IBAction func absentPressed(_ sender: NSButton) {
         processSelection(attendance: .absent)
     }
@@ -162,6 +168,39 @@ class ViewController: NSViewController {
         setUpForNextMember()
         playTransition(for: self.card)
     }
-
+    
+    
+    //MARK: - Touch Bar
+    
+    func absentPressedOnTouchBar() {
+        absentPressed(self.absentButton)
+        animateButtonPulse(self.absentButton)
+    }
+    
+    func excusedPressedOnTouchBar() {
+        excusedPressed(self.excusedButton)
+        animateButtonPulse(self.excusedButton)
+    }
+    
+    func presentPressedOnTouchBar() {
+        presentPressed(self.presentButton)
+        animateButtonPulse(self.presentButton)
+    }
+    
+    func animateButtonPulse(_ button: NSButton) {
+        NSAnimationContext.runAnimationGroup({ context in
+            
+            button.animator().alphaValue = 0.3
+            context.duration = 0.15
+            
+        }, completionHandler: {
+            
+            NSAnimationContext.runAnimationGroup({ context in
+                button.animator().alphaValue = 1.0
+                context.duration = 0.05
+            }, completionHandler: nil)
+            
+        })
+    }
+    
 }
-

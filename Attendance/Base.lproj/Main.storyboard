@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
@@ -89,7 +90,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="WindowTouchBarController" customModule="Attendance" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -426,7 +427,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="absentButton" destination="txq-Qy-5zK" id="lFC-Le-cpL"/>
                         <outlet property="card" destination="ecg-JE-27x" id="AC2-7a-SJL"/>
+                        <outlet property="excusedButton" destination="26W-6i-oUr" id="gTu-31-sBo"/>
                         <outlet property="firstName" destination="WTH-6z-O30" id="aFN-BU-vvh"/>
                         <outlet property="image" destination="ScN-i0-D1N" id="tn6-HE-o4F"/>
                         <outlet property="inputView" destination="OV8-ew-FdD" id="JRG-4r-mYE"/>
@@ -434,6 +437,7 @@
                         <outlet property="percentAbsent" destination="iQa-R8-ooa" id="cJk-fk-KiY"/>
                         <outlet property="percentExcused" destination="Z3p-Dt-MEl" id="nwf-jh-pgJ"/>
                         <outlet property="percentPresent" destination="Xgl-J7-Uhh" id="reI-jq-Q2r"/>
+                        <outlet property="presentButton" destination="KSU-mw-bC2" id="aOK-OK-hyO"/>
                         <outlet property="rollbookNumber" destination="EhE-w3-7rZ" id="uXW-Yf-N11"/>
                         <outlet property="statisticsView" destination="jzq-mw-cE2" id="jBb-Y2-qrH"/>
                     </connections>

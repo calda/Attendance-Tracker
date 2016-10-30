@@ -29,7 +29,7 @@ class Member : CustomStringConvertible, Equatable {
         
         let people = lines.map { line -> Member in
             //format: "Cal Stephens, 810"
-            let cols = line.components(separatedBy: ", ")
+            let cols = line.components(separatedBy: ",")
             
             let name = cols[0]
             let nameComponents = name.components(separatedBy: " ")
